@@ -11,8 +11,8 @@ Leipzig](https://www.genstat.imise.uni-leipzig.de/)
 
 ## Installation
 
-You can install t GWAShelpeR from this repository with:
+You can install GWAShelpeR from this repository with:
 
 ``` r
-devtools::install_github("holgerman/GWAShelpeR")
+devtools::install_github("GenStatLeipzig/GWAShelpeR")
 ```
