@@ -1,6 +1,6 @@
 # GwasHelpR 0.1.0
 
-* Renaming from GWAShelpeR to GwasHelpR and moving to https://github.com/GenStatLeipzig/GwasHelpR 
+* Renaming from GWAShelpeR to GwasHelpR and moving to https://github.com/GenStatLeipzig/GwasHelpR without git history
 
 # GWAShelpeR 0.0.0.9004
 

@@ -2,6 +2,10 @@
 
 export("%>%")
 export(calcPlink2AssocFromPGEN)
+export(gg_qqplot)
+import(ggplot2)
+import(scales)
+importFrom(data.table,data.table)
 importFrom(data.table,fread)
 importFrom(data.table,fwrite)
 importFrom(magrittr,"%>%")
