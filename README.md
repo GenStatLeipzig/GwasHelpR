@@ -16,5 +16,11 @@ Leipzig](https://www.genstat.imise.uni-leipzig.de/)
 You can install GWAShelpeR from this repository with:
 
 ``` r
-devtools::install_github("GenStatLeipzig/GWAShelpeR")
+devtools::install_github("GenStatLeipzig/GwasHelpR")
 ```
+
+
+``` r
+devtools::install_github("GenStatLeipzig/GwasHelpR@devel")
+```
+
