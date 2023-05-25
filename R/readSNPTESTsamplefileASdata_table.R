@@ -37,7 +37,7 @@ readSNPTESTsamplefileASdata.table <- function (snptest_sample_fn, makeBinaryOutc
   if(makeBinaryOutcomeNumeric12 == T) {for(i in names(samplefile_types[samplefile_types %in% c("B")])) {
 
     samplefile[,(i) := as.numeric(factor(get(i)))]
-    samplefile[,if(any(stats::na.omit(get(i)) %nin% c(1,2))) stop(paste0("Case/control phenotype " ,i, " is not encoded in exactly two levels...")) ]
+    samplefile[,if(any(!stats::na.omit(get(i)) %in% c(1,2))) stop(paste0("Case/control phenotype " ,i, " is not encoded in exactly two levels...")) ]
     samplefile[,(i) := factor(get(i))]
   }}
 
