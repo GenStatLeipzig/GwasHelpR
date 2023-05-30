@@ -18,7 +18,6 @@ Imports:
     data.table,
     stringr,
     testthat,
-    toolboxH,
     R.utils,
     RColorBrewer,
     fdrtool,
