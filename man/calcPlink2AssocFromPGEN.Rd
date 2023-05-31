@@ -12,8 +12,8 @@ calcPlink2AssocFromPGEN(
   out_fn,
   keep_fn = "",
   snps2extract = "",
- 
-    pfiles = "/net/ifs1/san_projekte/projekte/genstat/02_projekte/1612_lifea1_genotypisierungsrunde_3/Imputation/03_imputed_prephased/bgen1_2/combined/s302_3_PLINK_QCed_StandardRS_combined_a1_rd3_chr1to23_N7660",
+  pfiles =
+    "/net/ifs1/san_projekte/projekte/genstat/02_projekte/1612_lifea1_genotypisierungsrunde_3/Imputation/03_imputed_prephased/bgen1_2/combined/s302_3_PLINK_QCed_StandardRS_combined_a1_rd3_chr1to23_N7660",
   unixcomputer = "amanMRO",
   use_firth_fallback = T,
   code_chrX = "m:0_2_f:0_1_2",
@@ -21,10 +21,10 @@ calcPlink2AssocFromPGEN(
   max_vif = 50,
   morePlinkParameter = " --threads 2 --memory 6000",
   gz = T,
- 
-    plinklocation_avx = "/net/ifs1/san_projekte/projekte/genstat/07_programme/plink2.0/20201105/unix_64/plink2",
- 
-    plinklocation_unix64 = "/net/ifs1/san_projekte/projekte/genstat/07_programme/plink2.0/20201105/unix_avx2/plink2",
+  plinklocation_avx =
+    "/net/ifs1/san_projekte/projekte/genstat/07_programme/plink2.0/20201105/unix_64/plink2",
+  plinklocation_unix64 =
+    "/net/ifs1/san_projekte/projekte/genstat/07_programme/plink2.0/20201105/unix_avx2/plink2",
   writeCombinedPhenofile = T,
   returnCombinedPhenofile = T
 )

@@ -32,7 +32,6 @@
 #' @export
 #' @importFrom testthat test_that expect_equal
 #' @importFrom data.table fread fwrite
-#' @importFrom toolboxH formateTimediff moveColFront
 #' @importFrom stringr str_split str_locate_all str_sub str_replace_all
 #' @importFrom utils str
 #
@@ -107,10 +106,11 @@ calcPlink2AssocFromPGEN <- function(sampleinfo_fn,
     #
   }
 
+check = identical(paste(psamfile[,"FID"], psamfile[,"IID"]) %>% as.character(), paste(pheno[,"FID"], pheno[,"IID"]) %>% as.character())
 
-  qlist1= toolboxH::venn2(paste(psamfile[,"FID"], psamfile[,"IID"]), paste(pheno[,"FID"], pheno[,"IID"]) , plotte = F)
+check
 
-  if(length(c(qlist1$q2, qlist1$q3)) >0) {
+  if(check == F) {
     print(str(qlist1))
     stop("check that the same individuals with the same pedigree IDs are in files\n",paste(c(psamfile_fn, sampleinfo_fn), collapse = "\n"))
   }
@@ -125,7 +125,7 @@ calcPlink2AssocFromPGEN <- function(sampleinfo_fn,
     covartext = paste("--covar", covar_fn)
     covar = sampleinfo[, c("FID", "IID", covariables)]
 
-    toolboxH::write.delim(covar, covar_fn)
+    data.table::fwrite(covar, covar_fn, sep = "\t")
   }
 
   message("using outcomes\n", paste(outcome, collapse = "\n"))
@@ -133,8 +133,7 @@ calcPlink2AssocFromPGEN <- function(sampleinfo_fn,
   pheno_fn = paste0(out_fn, ".phenos")
   phenotext = paste("--pheno", pheno_fn)
   pheno = sampleinfo[, c(1,2, which(names(sampleinfo) %in% outcome))]
-  toolboxH::write.delim(pheno, pheno_fn)
-
+  data.table::fwrite(pheno, pheno_fn, sep = "\t")
 
 
   sextext = if(adjust4sex==T) sextest = "sex" else sextext = ''
@@ -153,7 +152,7 @@ calcPlink2AssocFromPGEN <- function(sampleinfo_fn,
   system(call2)
 
 
-  message("---------------------------------\nTotal time for calculating genedose-associations :\n", toolboxH::formateTimediff(Sys.time()-time1))
+  message("---------------------------------\nTotal time for calculating genedose-associations :\n",Sys.time()-time1)
 
   outpattern = stringr::str_split(out_fn,"/") %>% unlist() %>% data.table::last()
 
@@ -189,7 +188,7 @@ calcPlink2AssocFromPGEN <- function(sampleinfo_fn,
     }
     resi$out_fn = my_resultfile
     resi$pheno = myoutcome
-    resi = toolboxH::moveColFront(resi, "pheno")
+    # resi = toolboxH::moveColFront(resi, "pheno")
     resi
   }) %>% data.table::rbindlist(., use.names = T)
 
