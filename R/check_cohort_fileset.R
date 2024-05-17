@@ -17,6 +17,9 @@
 #' @import readxl
 
 check_cohort <- function (cohort_label, cohort_definition) {
+  if (!exists("cohort_label")) stop("Please specify a cohort!")
+  if (!exists("cohort_definition")) stop("Please specify a cohort definition file!")
+  
   # empty vectors to save checks and results
   check = NULL
   check_result = NULL
