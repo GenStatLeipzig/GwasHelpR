@@ -2,10 +2,13 @@
 
 export("%>%")
 export(calcPlink2AssocFromPGEN)
+export(check_cohort)
 export(gg_qqplot)
 export(readSNPTESTsamplefileASdata.table)
 export(writeSnptestSamplefile)
+import(data.table)
 import(ggplot2)
+import(readxl)
 import(scales)
 importFrom(data.table,data.table)
 importFrom(data.table,fread)
