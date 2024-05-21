@@ -1,6 +1,6 @@
 Package: GwasHelpR
 Title: A package to provide functions used in calculation of genetics at the genome-wide or candidate-gene level of AG GenStat
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: 
     person(given = "Holger",
            family = "Kirsten",
@@ -12,13 +12,12 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
 Imports: 
     magrittr,
     data.table,
     stringr,
     testthat,
-    toolboxH,
     R.utils,
     RColorBrewer,
     fdrtool,
